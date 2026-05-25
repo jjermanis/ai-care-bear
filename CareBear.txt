@@ -1,0 +1,17 @@
+Create a single-page app in a single HTML file with the following requirements:
+- Name: Care Bear
+- Goal: Collect all the treasures on the screen.
+- The game screen is 640x384 pixels
+- The player controls a Care Bear.
+- The image of the Care Bear is in the same folder, with this file name: CareBear v5.png
+- The player controls the Care Bear holding down the arrow keys to move.
+- The Care Bear starts at the lower-edge center.
+- The Care Bear is scaled down to 32 pixels wide. The height is adjust to keep the proportion of the Care Bear.
+- The entire background of the screen is a light green.
+- There are 20 treasure on the screen. They are pink color. They are in random locations on the screen. To calculate, pick a random number for X between 1 and 39. Pick a random number for Y from 1 to 22. The coordinates on the screen will be (16x, 16y). Each treasure will have a size of 16x16.
+- When the Care Bear touches a pink collar, it disappears.
+- There are 10 traps on the screen. They are a gray color. They have the exact same location rules as the treasures.
+- No treasure nor traps touch anything else on the screen.
+- If the Care Bear touches a trap, the screen shows Game Over. A button is shown to start the game again.
+- If the Care Bear touches all 20 treasures, the screen shows You Win!  A button is shown to start the game again.
+

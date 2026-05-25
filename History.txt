@@ -1,0 +1,37 @@
+version 01.01	Me 20 min	Gemini 4 min	Test 0 min	Total 24 min
+
+Prior to creating the game at all, attempted to get a version of the Care Bear player.
+It was intended to be 16x32 and monochrome. That was not expected to be an end point -
+I wanted to see how it looked an evaluate. This beginning was rough. The initial image
+was massive. It was 506x1024. It was made of a blocked-view, but taking that scaling
+into account, it was still greater than 16x32. I tried to get it to scale down. It 
+could not be done in Gemini. I got a 337x682 image. I will use scaling in the game to
+bring it down. 
+I'm curious how collision will work. Will it be the entire rectangle, or just where the
+pixels are? We shall see.
+
+
+version 01.02	Me 10 min	Gemini 1 min	Test 0 min	Total 35 min
+
+I tried to have Gemini remove excess white space above and below the Care Bear image. 
+It did not work. Two attempts. After the first time where it did not clip edges, it
+realized its mistakes... then did it again. I just did it myself in Windows Paint.
+
+
+version 01.03 	Me 32 min	Gemini 1 min	Test 2 min	Total 1 hour 10
+
+Created the initial version of the game. This was a fairly simple: I did the original
+game when I 12-ish. The game plays decently as-is. There are a couple of minor defects
+to address.
+
+
+
+TODO The transparency on the Care Bear isn't right - simply shows the grid background.
+	I thought that grid was representing the background... maybe it is the actual color?
+TODO I asked for items not to touch. I have seen it in 2 games.
+TODO Make it so hitting Enter restarts a game
+TODO Maybe make the random area for treasure and traps a bit smaller? For sure, x should
+	be one less. And my y is three less.
+
+
+
