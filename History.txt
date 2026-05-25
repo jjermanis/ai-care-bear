@@ -25,13 +25,22 @@ game when I 12-ish. The game plays decently as-is. There are a couple of minor d
 to address.
 
 
+version 01.04	Me 17 min	Gemini 5 min	Test 2 min	Total 1 hour 34
 
-TODO The transparency on the Care Bear isn't right - simply shows the grid background.
-	I thought that grid was representing the background... maybe it is the actual color?
+One of the issues that was noticed was that the transparency in the Care Bear PNG
+image did not work. The grid on the image looked like a marker for transparency.
+But it was an actual grid. I asked Gemini to replace that image with transparency.
+It failed three times - changes, but no transparency. As a sanity check, I went to
+ChatGPT to implement transparency. It worked on the first attempt. To work around
+this issue, I asked Gemini to make the background the same color as used in the 
+game. That did work. Less easy to change the ground color... but fine for now.
+
+
+
 TODO I asked for items not to touch. I have seen it in 2 games.
 TODO Make it so hitting Enter restarts a game
 TODO Maybe make the random area for treasure and traps a bit smaller? For sure, x should
-	be one less. And my y is three less.
+	be one less. And make y three less.
 
 
 
