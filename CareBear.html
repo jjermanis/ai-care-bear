@@ -152,7 +152,11 @@
 
         // Handle Keyboard input
         window.addEventListener('keydown', (e) => {
-            if (!gameOver) keysPressed[e.key] = true;
+            if (!gameOver) {
+                keysPressed[e.key] = true;
+            } else if (e.key === 'Enter') {
+                resetGame();
+            }
         });
 
         window.addEventListener('keyup', (e) => {
@@ -209,16 +213,31 @@
             requestAnimationFrame(gameLoop);
         }
 
-        // Calculates grid placements based on rules: X[1-39], Y[1-22] converted to (16x, 16y)
+        // Calculates grid placements ensuring NO items touch each other (includes a 1-tile buffer)
         function getRandomGridPosition() {
-            let maxAttempts = 1000;
+            let maxAttempts = 2000; 
             while (maxAttempts > 0) {
-                let gridX = Math.floor(Math.random() * (39 - 1 + 1)) + 1;
-                let gridY = Math.floor(Math.random() * (22 - 1 + 1)) + 1;
-                let key = `${gridX},${gridY}`;
+                let gridX = Math.floor(Math.random() * 38) + 1;
+                let gridY = Math.floor(Math.random() * 19) + 1;
+                
+                // Check if this spot OR any of its 8 neighbors are already occupied
+                let spaceIsTouching = false;
+                
+                for (let dx = -1; dx <= 1; dx++) {
+                    for (let dy = -1; dy <= 1; dy++) {
+                        let checkX = gridX + dx;
+                        let checkY = gridY + dy;
+                        if (occupiedGridPositions.has(`${checkX},${checkY}`)) {
+                            spaceIsTouching = true;
+                            break;
+                        }
+                    }
+                    if (spaceIsTouching) break;
+                }
 
-                // Check that no treasure nor traps touch the exact same coordinate
-                if (!occupiedGridPositions.has(key)) {
+                // Only accept the position if it is completely isolated
+                if (!spaceIsTouching) {
+                    let key = `${gridX},${gridY}`;
                     occupiedGridPositions.add(key);
                     return {
                         screenX: gridX * 16,

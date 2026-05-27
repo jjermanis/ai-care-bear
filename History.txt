@@ -36,11 +36,24 @@ this issue, I asked Gemini to make the background the same color as used in the
 game. That did work. Less easy to change the ground color... but fine for now.
 
 
+version 01.05	Me 7 min	Gemini 2 min	Test 4 min	Total 1 hour 47
 
-TODO I asked for items not to touch. I have seen it in 2 games.
-TODO Make it so hitting Enter restarts a game
-TODO Maybe make the random area for treasure and traps a bit smaller? For sure, x should
-	be one less. And make y three less.
+This was one of the original rules of the game:
+"No treasure nor traps touch anything else on the screen."
+This was not followed at all. Gemini implemented this to not put pieces on top of
+each other. It added a 1-pixel zone around each pixel to avoid added pieces. This
+was quick and worked well.
+To add some convenience, I wanted the Play Again button to also supply clicking 
+the Enter key with that button shown. Gemini provided a quick easy change for
+that.
+Finally, I added a little change to the random locations of items. I wanted to move 
+them off the right edge, and a few rows from the bottom so they wouldn't hit players
+at the beginning of the game before moving. This was easy to change manually.
+
+
+
+TODO Add MIT License
+TODO Create README
 
 
 
